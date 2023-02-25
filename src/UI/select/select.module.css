@@ -1,0 +1,9 @@
+.MySelect{
+    padding: 5px 15px;
+    border-radius: 0;
+    font-size:15px;
+    border:2px solid teal;
+}
+.MySelect:focus{
+    outline: none;
+}

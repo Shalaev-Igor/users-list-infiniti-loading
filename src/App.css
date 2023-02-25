@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed';
+}
+#root{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.App{
+  width: 800px;
+  padding:30px 15px;
+}
+.post{
+  display: flex;
+  padding:15px;
+  border:3px solid teal;
+  margin-top:15px;
+  justify-content: space-between;
+  align-items:center;
+}
+.post__btn{
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.post__content strong{
+  text-transform: capitalize;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.post-enter {
+  opacity: 0;
+}
+.post-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+.page__wrapper{
+  margin-top:15px
+}
+.page{
+  padding: 5px 10px;
+  border:2px solid teal;
+  cursor:pointer;
+  color:teal;
+  transition: .3s;
+  display: inline-block;
+  margin-top:8px;
+}
+.page + .page{
+  margin-left:5px;
+}
+.page:hover,
+.page:focus,
+.page__current{
+  transform: translateY(-3px);
+  box-shadow: 0px 2px 4px rgba(0, 128, 128, 0.4);
+}
+.page__current{
+  border:2px solid black;
+  color:black;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.navbar{
+  height:50px;
+  display: flex;
+  align-items:center;
+  padding:0 15px;
+  width: 800px;
+  background-color:lightgray;
+}
+.navbar__links{
+  margin-left:auto;
+}
+.navbar__links a+a{
+  margin-left:10px;
+}
+.navbar__links a{
+  text-decoration: none;
+  font-weight: bold;
+  color:black;
+  position: relative;
+}
+.navbar__links a:before{
+  content:'';
+  width: 0;
+  height: 2px;
+  background-color: teal;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition:0.3s;
+}
+.navbar__links a:hover:before,
+.navbar__links a:focus:before,
+.navbar__links a.active:before{
+  width: 100%;
+}
+.single__post{
+  padding:0 15px;
+  width: 800px;
+  margin-top:30px;
+}
+.single__post_title{
+  text-transform: capitalize;
+}
+.single__post_description{
+  margin-top: 15px;
+}
+.single__post h2{
+  margin-bottom: 20px;
+}
+@media(max-width:1023px){
+  .App{
+    width: 100%;
+    padding:30px 15px;
+  }
+  .single__post,
+  .navbar{
+    width: 100%;
+  }
+}
+@media (max-width:481px){
+  .post{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .post__btn{
+    margin:0;
+  }
+  .post__btn button+button{
+    margin-top:8px
+  }
+}
