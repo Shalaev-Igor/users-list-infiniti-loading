@@ -12,7 +12,7 @@ const Login = () => {
       localStorage.setItem('auth', 'true')
     }
   return (
-    <div>
+    <div style={{padding: '0 15px 0 0'}}>
         <h1 style={{marginTop:30}}>
             Login Page
         </h1>
